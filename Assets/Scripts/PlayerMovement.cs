@@ -65,7 +65,6 @@ public class PlayerMovement : MonoBehaviour
     void CheckGround()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
-        
     }
 
     void ChargeJump()
