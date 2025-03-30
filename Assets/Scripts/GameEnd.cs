@@ -1,16 +1,22 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEnd : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public string endGameScene = "EndGameScene";
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            EndGame();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void EndGame()
     {
-        
+        Debug.Log("End Game Triggered");
+        SceneManager.LoadScene(endGameScene);
     }
 }
